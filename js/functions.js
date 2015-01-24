@@ -1,10 +1,15 @@
 jQuery(document).ready(function ($) {
 
 	$( "#menu" ).accordion({
-      collapsible: true,
-      heightStyle: "content",
-      navigation: true 
+      	collapsible: true,
+      	heightStyle: "content",
+      	active: false
     });
+
+	$('#block-left #left-menu').on('click', function(){
+		$('#block-left').toggleClass('open', 300);
+	});
+
 	$('.upload_web_data').on('click', function(){
 		dataUrl = jQuery('#data_url').val();
 		// data_url = jQuery('.data_url').val();
@@ -35,9 +40,11 @@ jQuery(document).ready(function ($) {
 			chartType.type = dimple.plot.area;
 		if (chartType.type == 'dimple.plot.pie')
 			chartType.type = dimple.plot.pie;
-
+		$('#infographic .part.active .block .items').append('<div class="chart ui-widget draggble"></div>');
+		urlPath = '#infographic .part.active .block .items .chart:last-child';
+		console.log(urlPath);
 		console.log(chartType.type + " " + xAxis + " " + yAxis);
-		createChart(chartType.type, xAxis, yAxis, dataUrl);
+		createChart(urlPath, chartType.type, xAxis, yAxis, dataUrl, 400, 300);
 	});
 
 	$('.chart_type').on('click', function(){
@@ -78,15 +85,17 @@ function httpGet(theUrl)
     return xmlHttp.responseText;
 }
 
-function createChart(chartType, xAxis, yAxis, dataUrl){
-	var svg = dimple.newSvg("#chartContainer", 590, 400);
+function createChart(urlPath, chartType, xAxis, yAxis, dataUrl, chartWidth, chartHeight){
+	//var svg = dimple.newSvg("#chartContainer", 590, 400);
+	var svg = dimple.newSvg(urlPath, chartWidth, chartHeight);
 	// d3.tsv("../data/example_data.tsv", function (data) {
 	d3.csv(dataUrl, function (data) {
 	// d3.csv("http://ichart.finance.yahoo.com/table.csv", function (data){  
 
 	  // data = dimple.filterData(data, "Owner", ["Aperture", "Black Mesa"])
 	  var myChart = new dimple.chart(svg, data);
-	  myChart.setBounds(60, 30, 505, 305);
+	  myChart.setBounds(60, 30, chartWidth-85, chartHeight-95 );
+	  // myChart.setBounds(60, 30, 505, 305);
 
 	  var x = myChart.addCategoryAxis("x", xAxis);
 	  //x.addOrderRule(['Jan', 'Feb', 'Mar', 'Apr']);
@@ -102,4 +111,6 @@ function createChart(chartType, xAxis, yAxis, dataUrl){
 	  // myChart.addLegend(60, 10, 500, 20, "right");
 	  myChart.draw();
 	});
+
+	Items.initialization();
 }

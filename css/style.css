@@ -1,8 +1,6 @@
 html, body, div, span, applet, object, iframe, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
+del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
@@ -20,7 +18,7 @@ time, mark, audio, video {
 
 body {
     font-family: 'Lato', Arial, sans-serif;
-	background: url("../img/bg.jpg");
+	background: url("../images/bg.jpg");
 }
 
 a {
@@ -269,3 +267,11 @@ header p {
     filter: flipv;
 }
 
+#block-left {width:300px; top: -100px;left: -340px;float:left; z-index:100;position:absolute; margin-left:0px; background-color:#dfdfdf; border-bottom-right-radius: 4px;border-top-right-radius: 4px; padding:20px;}
+#block-left #left-menu {display: block;position: absolute;left: 340px;top: 60px;background-color: #dfdfdf;border-top-right-radius: 4px;border-bottom-right-radius: 4px;padding: 5px;}
+#block-left #left-menu span {width:21px; height:3px; margin:3px; background-color:#000000;display: block;}
+#block-left.open {left:0;}
+.inner-block {position:relative;}
+.container {position:relative;}
+
+#block-left .charts {height:500px;}

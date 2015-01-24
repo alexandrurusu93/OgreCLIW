@@ -29,7 +29,9 @@ $( document ).ready(function() {
     var selectBlock = function(event) {
         Items.reset();
         $("#miniMenu").css("display", "block");
+        $('.block .item').removeClass('active');
         selectedBlock = $(event.target).parents('div[class^="part"]');
+        selectedBlock.addClass('active');
         selectedBlock.prepend($("#miniMenu"));
         selectedBlock.children(".block").children(".hover-content").addClass("selected");
     };
@@ -38,6 +40,7 @@ $( document ).ready(function() {
         if (selectedBlock != -1) {
             if  (!selectedBlock.is( $(event.target).parents('div[class^="part"]') ) )  {
                 selectedBlock.children(".block").children(".hover-content").removeClass("selected");
+                selectedBlock.removeClass('active');
                 selectBlock(event);
             }
         }
