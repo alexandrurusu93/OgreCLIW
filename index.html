@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ogrE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Editor Web de infografice" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="css/jquery-ui.css" type="text/css" media="screen"/>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,100,300,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js" ></script>
+    <script type="text/javascript" src="js/jquery-ui.js" ></script>
+    <script type="text/javascript" src="js/items.js" ></script>
+    <script type="text/javascript" src="js/blocks.js" ></script>
+    <script type="text/javascript" src="js/html2canvas.js" ></script>
+</script>
+
+</head>
+
+<body>
+    <header>
+    	<h1>ogrE</h1>
+        <p>Infographics Web Editor</p>
+    </header>
+    
+    <article id="menu">
+    	<section> 
+            <ul>
+                <li> Încarcă </li>
+                <li> Fundal </li>
+                <li> Text </li>
+                <li> Unelte </li>
+                <li> Salveaza </li>
+            </ul>
+        </section>
+    </article>
+
+    <article>
+        <section id="itemMenu">
+            <label for="amount">Alpha:</label>
+            <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <div id="slider-1"></div>
+
+            <div id="flipH"> 
+                <img src="img/flipH.png" alt="flipHorizontal" />
+            </div>
+
+            <div id="flipV"> 
+                <img src="img/flipV.png" alt="flipVertical" />
+            </div>
+
+            <div id="widthItem"> 
+                <label for="width">Width: </label>
+                <input type="text" id="width" readonly style="border:0; color:#f6931f; font-weight:bold;"> 
+            </div>
+
+            <div id="heightItem"> 
+                <label for="height">Height: </label>
+                <input type="text" id="height" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            </div>
+        </section>
+
+        <section id="infographic">
+            <div class="part">
+                <div class="block">
+                    <div class="items">
+                        <div class="ui-widget draggble">
+                            <img src="img/icons/1.png" />
+                        </div>
+                        <div class="ui-widget draggble">
+                            <img src="img/icons/3.png" />
+                        </div>
+                        <div class="ui-widget draggble textItem">
+                            <p> Hello </p>
+                        </div>
+                    </div>
+
+                    <div class="hover-content">
+                        <div class="info"> 
+                            <p> Selectați </p> 
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="part">
+                <div class="block">
+                    <div class="items">
+                        <div class="ui-widget draggble">
+                            <img src="img/icons/2.png" />
+                        </div>
+                    </div>
+
+                    <div class="hover-content">
+                        <div class="info"> 
+                            <p> Selectați </p> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="part">
+                <div class="block">
+
+                    <div class="items">
+                        <div class="ui-widget draggble">
+                            <img src="img/icons/3.png" />
+                        </div>
+                    </div>
+
+                    <div class="hover-content">
+                        <div class="info"> 
+                            <p> Selectați </p> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="mini">
+            <div id="miniMenu"> 
+                <div id="up" > 
+                    <img src="img/arrowU.png" alt="up" />
+                </div>
+                <div id="down"> 
+                    <img src="img/arrowD.png" alt="down" />
+                </div>
+                <div id="clone"> 
+                    <img src="img/clone.png" alt="clone" />
+                </div>
+                <div id="delete"> 
+                    <img src="img/delete.png" alt="delete" />
+                </div>
+                <div id="add"> 
+                    <img src="img/add.png" alt="add" />
+                </div>
+            </div>
+
+            <div id="contextmenu" class="jqcontextmenu">
+                <div id="mCut"> 
+                    <img src="img/cutItem.png">
+                    <p> Cut </p>
+                </div>
+                <div id="mCopy"> 
+                    <img src="img/copyItem.png">
+                    <p> Copy </p>
+                </div>
+                <div id="mDelete"> 
+                    <img src="img/deleteItem.png">
+                    <p> Delete </p>
+                </div>
+                <div id="mLock"> 
+                    <img src="img/lock.png">
+                    <p> Lock </p>
+                </div>
+                <div id="mUnlock">
+                    <img src="img/un_lock.png"> 
+                    <p> Unlock </p>
+                </div>
+            </div>
+
+            <div id="contextmenu2" class="jqcontextmenu">
+                <div id="mPaste"> 
+                    <img src="img/pasteItem.png"> 
+                    <p> Paste </p> 
+                </div>
+            </div>
+
+        </section>
+    </article>
+
+
+</body>
+</html>
