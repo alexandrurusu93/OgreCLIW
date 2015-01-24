@@ -1,6 +1,10 @@
 jQuery(document).ready(function ($) {
 
-
+	$( "#menu" ).accordion({
+      collapsible: true,
+      heightStyle: "content",
+      navigation: true 
+    });
 	$('.upload_web_data').on('click', function(){
 		dataUrl = jQuery('#data_url').val();
 		// data_url = jQuery('.data_url').val();
