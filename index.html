@@ -18,155 +18,226 @@
 </head>
 
 <body>
-    <header>
+    <header class="container">
     	<h1>ogrE</h1>
-        <p>Infographics Web Editor</p>
-    </header>
-    
-    <article id="menu">
-    	<section> 
-            <ul>
-                <li> Încarcă </li>
-                <li> Fundal </li>
-                <li> Text </li>
-                <li> Unelte </li>
-                <li> Salveaza </li>
-            </ul>
-        </section>
-    </article>
-
-    <article>
-        <section id="itemMenu">
-            <label for="amount">Alpha:</label>
-            <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-            <div id="slider-1"></div>
-
-            <div id="flipH"> 
-                <img src="img/flipH.png" alt="flipHorizontal" />
-            </div>
-
-            <div id="flipV"> 
-                <img src="img/flipV.png" alt="flipVertical" />
-            </div>
-
-            <div id="widthItem"> 
-                <label for="width">Width: </label>
-                <input type="text" id="width" readonly style="border:0; color:#f6931f; font-weight:bold;"> 
-            </div>
-
-            <div id="heightItem"> 
-                <label for="height">Height: </label>
-                <input type="text" id="height" readonly style="border:0; color:#f6931f; font-weight:bold;">
-            </div>
-        </section>
-
-        <section id="infographic">
-            <div class="part">
-                <div class="block">
-                    <div class="items">
-                        <div class="ui-widget draggble">
-                            <img src="img/icons/1.png" />
+        <p>Infographics Web Editor</p></header>
+    <div id="container" class="container">
+        <div id="block-left">
+            <article id="menu">
+            	<section> 
+                    <h3>Infographic menu</h3>
+                    <ul>
+                        <li><button>Încarcă</button></li>
+                        <li><button>Fundal</button></li>
+                        <li><button>Text</button></li>
+                        <li><button>Unelte</button></li>
+                        <li><button>Salveaza</button></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Add Chart</h3>
+                    <div class="chart_editor">
+                        <div class="upload_data">
+                            <p>Upload data from local files or from web</p>
+                            <div class="upload_local">
+                                <p>Not completed</p>
+                            </div>
+                            <div class="upload_web">
+                                <p>Write the URL</p>
+                                <input type="text" id="data_url" placeholder="Write URL here">
+                                <button class="upload_web_data"><span>Load data</span></button>
+                            </div>
                         </div>
-                        <div class="ui-widget draggble">
-                            <img src="img/icons/3.png" />
+                        <div class="">
+                            <span>Set chart x axis</span>
+                            <select id="x_axis" class="x_axis">
+                                <option>Please Select ... </option>
+                            </select>
+                            <span>Set chart y axis</span>
+                            <select id="y_axis" class="y_axis">
+                                <option>Please Select ... </option>
+                            </select>
                         </div>
-                        <div class="ui-widget draggble textItem">
-                            <p> Hello </p>
+                    </div>
+                    <div id="chartContainer"></div>
+                    <div class="charts">
+                        <ul>
+                            <li><h1>Bar Charts</h1></li>
+                            <li><img class="chart_type" data-type="dimple.plot.bar" id="bar_horizontal" src="images/charts/bars_horizontal.jpg"></li>
+                            <li><img class="chart_type" data-type="dimple.plot.bar" id="bar_horizontal" src="images/charts/bars_horizontal_stacked.jpg"></li>
+                            <li><img class="chart_type" data-type="dimple.plot.bar" id="bar_horizontal" src="images/charts/bars_horizontal_stacked_100pct.jpg"></li>
+                            <li><img class="chart_type" data-type="dimple.plot.bar" id="bar_horizontal" src="images/charts/bars_vertical.jpg"></li>
+                            <li><img class="chart_type" data-type="dimple.plot.bar" id="bar_horizontal" src="images/charts/bars_vertical_grouped.jpg"></li>
+                            <li><img class="chart_type" data-type="dimple.plot.bar" id="bar_horizontal" src="images/charts/bars_vertical_grouped_stacked.jpg"></li>
+                            <li><img class="chart_type" data-type="dimple.plot.bar" id="bar_horizontal" src="images/charts/bars_vertical_grouped_stacked_100pct.jpg"></li>
+                        </ul>
+                        <ul>
+                            <li><h1>Pie Charts</h1></li>
+                            <li><img class="chart_type" data-type="dimple.plot.pie" id="pie_standard" src="images/charts/pie_standard.jpg"></li>
+                            <li><img class="chart_type" data-type="dimple.plot.pie" id="pie_matrix" src="images/charts/pie_matrix.jpg"></li>
+                        </ul>
+                        <ul>
+                            <li><h1>Area Charts</h1></li>
+                            <li><img class="chart_type" data-type="dimple.plot.area" id="bar_horizontal" src="images/charts/area_steps_horizontal.jpg"></li>
+                            <li><img class="chart_type" data-type="dimple.plot.area" id="bar_horizontal" src="images/charts/area_steps_vertical.jpg"></li>
+                            <li><img class="chart_type" data-type="dimple.plot.area" id="bar_horizontal" src="images/charts/area_steps_vertical_grouped_100pct.jpg"></li>
+                        </ul>
+                        <ul>
+                            <li><h1>Line Charts</h1></li>
+                            <li><img class="chart_type" id="bar_horizontal" src="images/charts/area_steps_horizontal.jpg"></li>
+                        </ul>
+
+                        <ul>
+                            <li><h1>Ring Charts</h1></li>
+                            <li><img class="chart_type" id="bar_horizontal" src="images/charts/ring_multiple.jpg"></li>
+                            <li><img class="chart_type" id="bar_horizontal" src="images/charts/ring_standard.jpg"></li>
+                        </ul>
+
+                        <ul>
+                            <li><h1>Step Charts</h1></li>
+                            <li><img class="chart_type" id="bar_horizontal" src="images/charts/steps_horizontal.jpg"></li>
+                            <li><img class="chart_type" id="bar_horizontal" src="images/charts/steps_horizontal_grouped.jpg"></li>
+                        </ul>
+
+                    </div>
+                    <button class="create_chart">Create Chart</button>
+                </section>
+                <section></section>
+            </article>
+        </div>
+
+            <article>
+                <section id="itemMenu">
+                    <label for="amount">Alpha:</label>
+                    <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                    <div id="slider-1"></div>
+
+                    <div id="flipH"> 
+                        <img src="img/flipH.png" alt="flipHorizontal" />
+                    </div>
+
+                    <div id="flipV"> 
+                        <img src="img/flipV.png" alt="flipVertical" />
+                    </div>
+
+                    <div id="widthItem"> 
+                        <label for="width">Width: </label>
+                        <input type="text" id="width" readonly style="border:0; color:#f6931f; font-weight:bold;"> 
+                    </div>
+
+                    <div id="heightItem"> 
+                        <label for="height">Height: </label>
+                        <input type="text" id="height" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                    </div>
+                </section>
+
+                <section id="infographic">
+                    <div class="part">
+                        <div class="block">
+                            <div class="items">
+                                <div class="ui-widget draggble">
+                                    <img src="img/icons/1.png" />
+                                </div>
+                                <div class="ui-widget draggble">
+                                    <img src="img/icons/3.png" />
+                                </div>
+                                <div class="ui-widget draggble textItem">
+                                    <p> Hello </p>
+                                </div>
+                            </div>
+
+                            <div class="hover-content">
+                                <div class="info"> 
+                                    <p> Selectați </p> 
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="part">
+                        <div class="block">
+                            <div class="items">
+                                <div class="ui-widget draggble">
+                                    <img src="img/icons/2.png" />
+                                </div>
+                            </div>
+
+                            <div class="hover-content">
+                                <div class="info"> 
+                                    <p> Selectați </p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part">
+                        <div class="block">
+
+                            <div class="items">
+                                <div class="ui-widget draggble">
+                                    <img src="img/icons/3.png" />
+                                </div>
+                            </div>
+
+                            <div class="hover-content">
+                                <div class="info"> 
+                                    <p> Selectați </p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="mini">
+                    <div id="miniMenu"> 
+                        <div id="up" > 
+                            <img src="img/arrowU.png" alt="up" />
+                        </div>
+                        <div id="down"> 
+                            <img src="img/arrowD.png" alt="down" />
+                        </div>
+                        <div id="clone"> 
+                            <img src="img/clone.png" alt="clone" />
+                        </div>
+                        <div id="delete"> 
+                            <img src="img/delete.png" alt="delete" />
+                        </div>
+                        <div id="add"> 
+                            <img src="img/add.png" alt="add" />
                         </div>
                     </div>
 
-                    <div class="hover-content">
-                        <div class="info"> 
-                            <p> Selectați </p> 
+                    <div id="contextmenu" class="jqcontextmenu">
+                        <div id="mCut"> 
+                            <img src="img/cutItem.png">
+                            <p> Cut </p>
+                        </div>
+                        <div id="mCopy"> 
+                            <img src="img/copyItem.png">
+                            <p> Copy </p>
+                        </div>
+                        <div id="mDelete"> 
+                            <img src="img/deleteItem.png">
+                            <p> Delete </p>
+                        </div>
+                        <div id="mLock"> 
+                            <img src="img/lock.png">
+                            <p> Lock </p>
+                        </div>
+                        <div id="mUnlock">
+                            <img src="img/un_lock.png"> 
+                            <p> Unlock </p>
                         </div>
                     </div>
 
-                </div>
-            </div>
-            <div class="part">
-                <div class="block">
-                    <div class="items">
-                        <div class="ui-widget draggble">
-                            <img src="img/icons/2.png" />
+                    <div id="contextmenu2" class="jqcontextmenu">
+                        <div id="mPaste"> 
+                            <img src="img/pasteItem.png"> 
+                            <p> Paste </p> 
                         </div>
                     </div>
 
-                    <div class="hover-content">
-                        <div class="info"> 
-                            <p> Selectați </p> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="part">
-                <div class="block">
-
-                    <div class="items">
-                        <div class="ui-widget draggble">
-                            <img src="img/icons/3.png" />
-                        </div>
-                    </div>
-
-                    <div class="hover-content">
-                        <div class="info"> 
-                            <p> Selectați </p> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="mini">
-            <div id="miniMenu"> 
-                <div id="up" > 
-                    <img src="img/arrowU.png" alt="up" />
-                </div>
-                <div id="down"> 
-                    <img src="img/arrowD.png" alt="down" />
-                </div>
-                <div id="clone"> 
-                    <img src="img/clone.png" alt="clone" />
-                </div>
-                <div id="delete"> 
-                    <img src="img/delete.png" alt="delete" />
-                </div>
-                <div id="add"> 
-                    <img src="img/add.png" alt="add" />
-                </div>
-            </div>
-
-            <div id="contextmenu" class="jqcontextmenu">
-                <div id="mCut"> 
-                    <img src="img/cutItem.png">
-                    <p> Cut </p>
-                </div>
-                <div id="mCopy"> 
-                    <img src="img/copyItem.png">
-                    <p> Copy </p>
-                </div>
-                <div id="mDelete"> 
-                    <img src="img/deleteItem.png">
-                    <p> Delete </p>
-                </div>
-                <div id="mLock"> 
-                    <img src="img/lock.png">
-                    <p> Lock </p>
-                </div>
-                <div id="mUnlock">
-                    <img src="img/un_lock.png"> 
-                    <p> Unlock </p>
-                </div>
-            </div>
-
-            <div id="contextmenu2" class="jqcontextmenu">
-                <div id="mPaste"> 
-                    <img src="img/pasteItem.png"> 
-                    <p> Paste </p> 
-                </div>
-            </div>
-
-        </section>
-    </article>
-
-
+                </section>
+            </article>
+    </div>
+    <footer></footer>
 </body>
 </html>
