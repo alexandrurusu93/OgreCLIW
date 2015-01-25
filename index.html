@@ -57,41 +57,50 @@
                                 </div>
                             </div>
                             <div class="">
-                                <span>Set chart x axis</span>
-                                <select id="x_axis" class="x_axis">
-                                    <option>Please Select ... </option>
-                                </select>
-                                <span>Set chart y axis</span>
-                                <select id="y_axis" class="y_axis">
-                                    <option>Please Select ... </option>
-                                </select>
+                                <div>
+                                    <label for="chartWidth">Set the width of chart in px</label>
+                                    <input type="text" id="chartWidth" name="chartWidth" placeholder="For example: 400">
+                                </div>
+                                <div>
+                                    <label for="chartHeight">Set the height of chart in px</label>
+                                    <input type="text" id="chartHeight" name="chartHeight" placeholder="For example: 400">
+                                </div>
+                                <div>
+                                    <label for="x_axis">Set chart x axis</label>
+                                    <select name="x_axis" id="x_axis" class="x_axis">
+                                        <option>Please Select ... </option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="y_axis">Set chart y axis</span>
+                                    <select name="y_axis" id="y_axis" class="y_axis">
+                                        <option>Please Select ... </option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="charts">
                             <ul>
-                                <li><h2>Bar Charts</h2></li>
-                                <li><img class="chart_type" data-type="dimple.plot.bar" id="bar_horizontal" src="images/charts/bars_horizontal.jpg"></li>
-                                <li><img class="chart_type" data-type="dimple.plot.bar" id="bar_horizontal" src="images/charts/bars_vertical.jpg"></li>
+                                <li><h4>Bar Charts</h4></li>
+                                <li>
+                                    <img class="chart_type" data-type="dimple.plot.bar" id="bar_horizontal" src="images/charts/bars_horizontal.jpg">
+                                    <img class="chart_type" data-type="dimple.plot.bar" id="bar_horizontal" src="images/charts/bars_vertical.jpg">
+                                </li>
                             </ul>
                             <ul>
-                                <li><h2>Pie Charts</h2></li>
+                                <li><h4>Pie Charts</h4></li>
                                 <li><img class="chart_type" data-type="dimple.plot.pie" id="pie_standard" src="images/charts/pie_standard.jpg"></li>
                             </ul>
                             <ul>
-                                <li><h2>Area Charts</h2></li>
+                                <li><h4>Area Charts</h4></li>
                                 <li><img class="chart_type" data-type="dimple.plot.area" id="bar_horizontal" src="images/charts/area_steps_horizontal.jpg"></li>
                             </ul>
                             <ul>
-                                <li><h2>Line Charts</h2></li>
+                                <li><h4>Line Charts</h4></li>
                                 <li><img class="chart_type" id="bar_horizontal" src="images/charts/area_steps_horizontal.jpg"></li>
                             </ul>
-
                             <ul>
-                                <li><h2>Ring Charts</h2></li>
-                                <li><img class="chart_type" id="bar_horizontal" src="images/charts/ring_standard.jpg"></li>
-                            </ul>
-                            <ul>
-                                <li><h1>Step Charts</h1></li>
+                                <li><h4>Step Charts</h4></li>
                                 <li><img class="chart_type" id="bar_horizontal" src="images/charts/steps_horizontal.jpg"></li>
                             </ul>
                         </div>

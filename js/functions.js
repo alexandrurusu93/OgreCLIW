@@ -6,6 +6,8 @@ jQuery(document).ready(function ($) {
       	active: false
     });
 
+    $('#block-left .charts').scrollbar();
+
 	$('#block-left #left-menu').on('click', function(){
 		$('#block-left').toggleClass('open', 300);
 	});
